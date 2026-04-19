@@ -1,1 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <!-- Deep space background -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#0A0D14"/>
+      <stop offset="50%"  stop-color="#0D1525"/>
+      <stop offset="100%" stop-color="#060810"/>
+    </linearGradient>
 
+    <!-- Gold accent gradient -->
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#C9963A"/>
+      <stop offset="50%"  stop-color="#E8C170"/>
+      <stop offset="100%" stop-color="#C9963A"/>
+    </linearGradient>
+
+    <!-- Teal accent -->
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#1A6B7C"/>
+      <stop offset="100%" stop-color="#24A0B5"/>
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Soft glow for center -->
+    <filter id="softglow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Star pattern -->
+    <pattern id="stars" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="18"  r="0.6" fill="#E8C170" opacity="0.4"/>
+      <circle cx="67" cy="5"   r="0.8" fill="#FFFFFF" opacity="0.3"/>
+      <circle cx="98" cy="44"  r="0.5" fill="#E8C170" opacity="0.5"/>
+      <circle cx="30" cy="75"  r="0.7" fill="#FFFFFF" opacity="0.2"/>
+      <circle cx="85" cy="90"  r="0.6" fill="#24A0B5" opacity="0.4"/>
+      <circle cx="50" cy="55"  r="0.4" fill="#FFFFFF" opacity="0.35"/>
+      <circle cx="110" cy="70" r="0.7" fill="#E8C170" opacity="0.3"/>
+      <circle cx="5"   cy="95" r="0.5" fill="#FFFFFF" opacity="0.25"/>
+    </pattern>
+
+    <!-- Islamic geometric tile — 8-pointed star unit -->
+    <pattern id="geom" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+      <g opacity="0.06" fill="none" stroke="#C9963A" stroke-width="0.6">
+        <!-- 8-pointed star outline -->
+        <polygon points="40,4 47,28 70,20 55,40 70,60 47,52 40,76 33,52 10,60 25,40 10,20 33,28"
+                 fill="none" stroke="#C9963A" stroke-width="0.5" opacity="0.7"/>
+        <!-- Inner square rotated 45° -->
+        <rect x="26" y="26" width="28" height="28" transform="rotate(45 40 40)"
+              fill="none" stroke="#C9963A" stroke-width="0.4" opacity="0.5"/>
+        <!-- Center square -->
+        <rect x="30" y="30" width="20" height="20"
+              fill="none" stroke="#C9963A" stroke-width="0.3" opacity="0.4"/>
+      </g>
+    </pattern>
+  </defs>
+
+  <!-- Base background -->
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+
+  <!-- Star field -->
+  <rect width="1920" height="1080" fill="url(#stars)" opacity="0.9"/>
+
+  <!-- Islamic geometric texture overlay -->
+  <rect width="1920" height="1080" fill="url(#geom)"/>
+
+  <!-- Subtle center radial atmosphere -->
+  <ellipse cx="960" cy="540" rx="600" ry="360"
+           fill="#1A2840" opacity="0.25" filter="url(#softglow)"/>
+
+  <!-- ── Horizontal rule lines ── -->
+  <line x1="0" y1="120" x2="1920" y2="120" stroke="#C9963A" stroke-width="0.4" opacity="0.12"/>
+  <line x1="0" y1="960" x2="1920" y2="960" stroke="#C9963A" stroke-width="0.4" opacity="0.12"/>
+
+  <!-- ── Left decorative column ── -->
+  <!-- Vertical gold bar -->
+  <rect x="110" y="140" width="1.5" height="800" fill="url(#gold)" opacity="0.25"/>
+  <rect x="130" y="180" width="0.8" height="720" fill="#C9963A" opacity="0.12"/>
+
+  <!-- Left pattern motif — stacked diamonds -->
+  <g opacity="0.18" fill="none" stroke="#C9963A" stroke-width="0.8">
+    <g transform="translate(120,300)">
+      <polygon points="0,-18 18,0 0,18 -18,0"/>
+      <polygon points="0,-10 10,0 0,10 -10,0" fill="#C9963A" opacity="0.3"/>
+    </g>
+    <g transform="translate(120,420)">
+      <polygon points="0,-18 18,0 0,18 -18,0"/>
+      <polygon points="0,-10 10,0 0,10 -10,0" fill="#C9963A" opacity="0.3"/>
+    </g>
+    <g transform="translate(120,540)">
+      <polygon points="0,-18 18,0 0,18 -18,0"/>
+      <polygon points="0,-10 10,0 0,10 -10,0" fill="#C9963A" opacity="0.3"/>
+    </g>
+    <g transform="translate(120,660)">
+      <polygon points="0,-18 18,0 0,18 -18,0"/>
+      <polygon points="0,-10 10,0 0,10 -10,0" fill="#C9963A" opacity="0.3"/>
+    </g>
+    <g transform="translate(120,780)">
+      <polygon points="0,-18 18,0 0,18 -18,0"/>
+      <polygon points="0,-10 10,0 0,10 -10,0" fill="#C9963A" opacity="0.3"/>
+    </g>
+  </g>
+
+  <!-- ── Right decorative column (mirror) ── -->
+  <rect x="1808.5" y="140" width="1.5" height="800" fill="url(#gold)" opacity="0.25"/>
+  <rect x="1789.2" y="180" width="0.8" height="720" fill="#C9963A" opacity="0.12"/>
+
+  <g opacity="0.18" fill="none" stroke="#C9963A" stroke-width="0.8">
+    <g transform="translate(1800,300)">
+      <polygon points="0,-18 18,0 0,18 -18,0"/>
+      <polygon points="0,-10 10,0 0,10 -10,0" fill="#C9963A" opacity="0.3"/>
+    </g>
+    <g transform="translate(1800,420)">
+      <polygon points="0,-18 18,0 0,18 -18,0"/>
+      <polygon points="0,-10 10,0 0,10 -10,0" fill="#C9963A" opacity="0.3"/>
+    </g>
+    <g transform="translate(1800,540)">
+      <polygon points="0,-18 18,0 0,18 -18,0"/>
+      <polygon points="0,-10 10,0 0,10 -10,0" fill="#C9963A" opacity="0.3"/>
+    </g>
+    <g transform="translate(1800,660)">
+      <polygon points="0,-18 18,0 0,18 -18,0"/>
+      <polygon points="0,-10 10,0 0,10 -10,0" fill="#C9963A" opacity="0.3"/>
+    </g>
+    <g transform="translate(1800,780)">
+      <polygon points="0,-18 18,0 0,18 -18,0"/>
+      <polygon points="0,-10 10,0 0,10 -10,0" fill="#C9963A" opacity="0.3"/>
+    </g>
+  </g>
+
+  <!-- ── Central geometric mandala ── -->
+  <g transform="translate(960,540)">
+
+    <!-- Outermost ring — thin gold -->
+    <circle r="280" fill="none" stroke="#C9963A" stroke-width="0.5" opacity="0.15"/>
+    <circle r="260" fill="none" stroke="#C9963A" stroke-width="0.3" opacity="0.10"/>
+
+    <!-- 16-point star ring -->
+    <g opacity="0.12" fill="none" stroke="#C9963A" stroke-width="0.7">
+      <g transform="rotate(0)">  <line x1="220" y1="0" x2="260" y2="0"/></g>
+      <g transform="rotate(22.5)"><line x1="220" y1="0" x2="260" y2="0"/></g>
+      <g transform="rotate(45)"> <line x1="220" y1="0" x2="260" y2="0"/></g>
+      <g transform="rotate(67.5)"><line x1="220" y1="0" x2="260" y2="0"/></g>
+      <g transform="rotate(90)"> <line x1="220" y1="0" x2="260" y2="0"/></g>
+      <g transform="rotate(112.5)"><line x1="220" y1="0" x2="260" y2="0"/></g>
+      <g transform="rotate(135)"><line x1="220" y1="0" x2="260" y2="0"/></g>
+      <g transform="rotate(157.5)"><line x1="220" y1="0" x2="260" y2="0"/></g>
+      <g transform="rotate(180)"><line x1="220" y1="0" x2="260" y2="0"/></g>
+      <g transform="rotate(202.5)"><line x1="220" y1="0" x2="260" y2="0"/></g>
+      <g transform="rotate(225)"><line x1="220" y1="0" x2="260" y2="0"/></g>
+      <g transform="rotate(247.5)"><line x1="220" y1="0" x2="260" y2="0"/></g>
+      <g transform="rotate(270)"><line x1="220" y1="0" x2="260" y2="0"/></g>
+      <g transform="rotate(292.5)"><line x1="220" y1="0" x2="260" y2="0"/></g>
+      <g transform="rotate(315)"><line x1="220" y1="0" x2="260" y2="0"/></g>
+      <g transform="rotate(337.5)"><line x1="220" y1="0" x2="260" y2="0"/></g>
+    </g>
+
+    <!-- Mid ring -->
+    <circle r="220" fill="none" stroke="#C9963A" stroke-width="0.6" opacity="0.2"/>
+
+    <!-- 8-pointed outer star — sharp points -->
+    <polygon
+      points="0,-200 28,-90 90,-160 50,-50 160,-90 90,0 160,90 50,50 90,160 28,90 0,200 -28,90 -90,160 -50,50 -160,90 -90,0 -160,-90 -50,-50 -90,-160 -28,-90"
+      fill="none" stroke="#C9963A" stroke-width="0.8" opacity="0.22"/>
+
+    <!-- Inner hexagonal ring -->
+    <circle r="150" fill="none" stroke="#24A0B5" stroke-width="0.5" opacity="0.2"/>
+
+    <!-- Teal 6-point accent star -->
+    <g opacity="0.18" fill="none" stroke="#24A0B5" stroke-width="0.7">
+      <polygon points="0,-140 80,-60 80,60 0,140 -80,60 -80,-60"/>
+      <polygon points="0,-100 57,-57 57,57 0,100 -57,57 -57,-57" transform="rotate(30)"/>
+    </g>
+
+    <!-- Inner circle -->
+    <circle r="100" fill="none" stroke="#C9963A" stroke-width="0.8" opacity="0.3"/>
+
+    <!-- 4 spokes -->
+    <g stroke="#C9963A" stroke-width="0.6" opacity="0.2">
+      <line x1="0" y1="-100" x2="0"    y2="-220"/>
+      <line x1="100" y1="0"  x2="220"  y2="0"/>
+      <line x1="0" y1="100"  x2="0"    y2="220"/>
+      <line x1="-100" y1="0" x2="-220" y2="0"/>
+    </g>
+    <!-- 4 diagonal spokes -->
+    <g stroke="#C9963A" stroke-width="0.4" opacity="0.14">
+      <line x1="70"  y1="-70"  x2="155" y2="-155"/>
+      <line x1="70"  y1="70"   x2="155" y2="155"/>
+      <line x1="-70" y1="70"   x2="-155" y2="155"/>
+      <line x1="-70" y1="-70"  x2="-155" y2="-155"/>
+    </g>
+
+    <!-- Core 4-pointed inner star — glowing -->
+    <polygon points="0,-80 18,-18 80,0 18,18 0,80 -18,18 -80,0 -18,-18"
+             fill="#1A2840" stroke="#C9963A" stroke-width="1" opacity="0.6"
+             filter="url(#glow)"/>
+
+    <!-- Center dot cluster -->
+    <circle r="32" fill="#C9963A" opacity="0.08"/>
+    <circle r="22" fill="#C9963A" opacity="0.12"/>
+    <circle r="14" fill="#C9963A" opacity="0.20"/>
+    <circle r="6"  fill="#E8C170" opacity="0.55" filter="url(#glow)"/>
+    <circle r="2.5" fill="#FFF0C0" opacity="0.9"/>
+  </g>
+
+  <!-- ── Wordmark: ديار ── -->
+  <!-- Arabic logotype — custom path rendering of "ديار" in geometric style -->
+  <!-- Positioned lower-center, understated -->
+  <g transform="translate(960,820)" opacity="0.55">
+    <!-- Horizontal base rule -->
+    <line x1="-120" y1="0" x2="120" y2="0" stroke="#C9963A" stroke-width="0.8" opacity="0.6"/>
+    <!-- Text -->
+    <text
+      x="0" y="-14"
+      text-anchor="middle"
+      font-family="'Amiri', 'Noto Serif Arabic', serif"
+      font-size="38"
+      font-weight="400"
+      letter-spacing="8"
+      fill="#C9963A"
+      opacity="0.7">ديار</text>
+    <!-- Subtitle -->
+    <text
+      x="0" y="22"
+      text-anchor="middle"
+      font-family="'DejaVu Sans', sans-serif"
+      font-size="10"
+      letter-spacing="6"
+      fill="#E8C170"
+      opacity="0.35">D I Y A R   O S</text>
+  </g>
+
+  <!-- ── Corner ornaments ── -->
+  <!-- Top-left -->
+  <g transform="translate(50,50)" opacity="0.22" stroke="#C9963A" fill="none" stroke-width="0.7">
+    <polyline points="0,60 0,0 60,0"/>
+    <polyline points="10,50 10,10 50,10"/>
+    <circle cx="28" cy="28" r="8"/>
+  </g>
+  <!-- Top-right -->
+  <g transform="translate(1870,50)" opacity="0.22" stroke="#C9963A" fill="none" stroke-width="0.7">
+    <polyline points="0,0 0,60" transform="translate(0,0)"/>
+    <polyline points="-60,0 0,0"/>
+    <polyline points="-50,10 -10,10 -10,50"/>
+    <circle cx="-28" cy="28" r="8"/>
+  </g>
+  <!-- Bottom-left -->
+  <g transform="translate(50,1030)" opacity="0.22" stroke="#C9963A" fill="none" stroke-width="0.7">
+    <polyline points="0,0 0,-60"/>
+    <polyline points="0,0 60,0"/>
+    <polyline points="10,-10 10,-50"/>
+    <polyline points="10,-10 50,-10"/>
+    <circle cx="28" cy="-28" r="8"/>
+  </g>
+  <!-- Bottom-right -->
+  <g transform="translate(1870,1030)" opacity="0.22" stroke="#C9963A" fill="none" stroke-width="0.7">
+    <polyline points="0,0 0,-60"/>
+    <polyline points="0,0 -60,0"/>
+    <polyline points="-10,-10 -10,-50"/>
+    <polyline points="-10,-10 -50,-10"/>
+    <circle cx="-28" cy="-28" r="8"/>
+  </g>
+
+</svg>
