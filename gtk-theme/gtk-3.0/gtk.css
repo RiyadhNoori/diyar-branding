@@ -1,1 +1,410 @@
+/* =============================================================================
+   Diyar OS — GTK3 Theme
+   gtk-theme/gtk-3.0/gtk.css
+   
+   Design language:
+   - Deep navy base (#0D1525)
+   - Sharp gold accent (#C9963A)
+   - Teal secondary (#1A6B7C)
+   - Zero border-radius on main containers (sharp, modern)
+   - 2px gold left-border on selected/active elements
+   - Thin 1px borders throughout — no thick shadows
+   ============================================================================= */
 
+/* ── Variables ─────────────────────────────────────────────────────────────── */
+@define-color bg_color          #0F1520;
+@define-color bg_color_alt      #161D2E;
+@define-color bg_color_dark     #090C14;
+@define-color fg_color          #C8D4E8;
+@define-color fg_color_muted    #5A7090;
+@define-color fg_color_dim      #2A3850;
+@define-color accent_gold       #C9963A;
+@define-color accent_gold_light #E8C170;
+@define-color accent_teal       #1A6B7C;
+@define-color accent_teal_light #24A0B5;
+@define-color border_color      #1E2A40;
+@define-color border_focus      #C9963A;
+@define-color selection_bg      #1A2840;
+@define-color error_color       #C0392B;
+@define-color success_color     #1A8050;
+@define-color warning_color     #B07820;
+
+/* ── Global reset ──────────────────────────────────────────────────────────── */
+* {
+    outline: none;
+    -gtk-icon-shadow: none;
+    box-shadow: none;
+}
+
+/* ── Window ────────────────────────────────────────────────────────────────── */
+window,
+.window {
+    background-color: @bg_color;
+    color: @fg_color;
+    border: 1px solid @border_color;
+}
+
+window.maximized,
+window.fullscreen {
+    border: none;
+    border-radius: 0;
+}
+
+/* ── Header bar / Title bar ────────────────────────────────────────────────── */
+headerbar,
+.titlebar {
+    background-color: @bg_color_dark;
+    color: @fg_color;
+    border-bottom: 1px solid @border_color;
+    border-radius: 0;
+    padding: 4px 8px;
+    min-height: 36px;
+}
+
+headerbar .title {
+    font-weight: 500;
+    font-size: 0.9em;
+    color: @fg_color;
+}
+
+headerbar .subtitle {
+    font-size: 0.8em;
+    color: @fg_color_muted;
+}
+
+/* Window controls — square, minimal */
+.titlebar button.titlebutton,
+headerbar button.titlebutton {
+    background: transparent;
+    border: 1px solid @border_color;
+    border-radius: 0;
+    padding: 3px 7px;
+    color: @fg_color_muted;
+    min-width: 0;
+    min-height: 0;
+}
+
+.titlebar button.titlebutton:hover,
+headerbar button.titlebutton:hover {
+    background-color: @accent_gold;
+    border-color: @accent_gold;
+    color: @bg_color_dark;
+}
+
+.titlebar button.titlebutton.close:hover,
+headerbar button.titlebutton.close:hover {
+    background-color: @error_color;
+    border-color: @error_color;
+    color: white;
+}
+
+/* ── Buttons ────────────────────────────────────────────────────────────────── */
+button {
+    background-color: @bg_color_alt;
+    color: @fg_color;
+    border: 1px solid @border_color;
+    border-radius: 0;
+    padding: 5px 14px;
+    transition: background-color 80ms, border-color 80ms;
+}
+
+button:hover {
+    background-color: @selection_bg;
+    border-color: @accent_gold;
+    color: @accent_gold_light;
+}
+
+button:active,
+button:checked {
+    background-color: @accent_gold;
+    color: @bg_color_dark;
+    border-color: @accent_gold;
+}
+
+button.suggested-action {
+    background-color: @accent_teal;
+    border-color: @accent_teal_light;
+    color: white;
+}
+
+button.suggested-action:hover {
+    background-color: @accent_teal_light;
+}
+
+button.destructive-action {
+    background-color: @error_color;
+    color: white;
+}
+
+/* ── Entries (text input) ───────────────────────────────────────────────────── */
+entry {
+    background-color: @bg_color_dark;
+    color: @fg_color;
+    border: 1px solid @border_color;
+    border-radius: 0;
+    padding: 5px 10px;
+    caret-color: @accent_gold;
+}
+
+entry:focus {
+    border-color: @accent_gold;
+    border-left-width: 2px;
+}
+
+entry selection {
+    background-color: @accent_gold;
+    color: @bg_color_dark;
+}
+
+/* ── Lists & Rows ───────────────────────────────────────────────────────────── */
+list,
+treeview,
+.view {
+    background-color: @bg_color;
+    color: @fg_color;
+    border: 1px solid @border_color;
+    border-radius: 0;
+}
+
+row,
+treeview.view row {
+    padding: 4px 0;
+    border-bottom: 1px solid @bg_color_alt;
+}
+
+row:selected,
+row:selected:focus,
+treeview.view row:selected {
+    background-color: @selection_bg;
+    color: @fg_color;
+    border-left: 2px solid @accent_gold;
+}
+
+/* ── Sidebar ────────────────────────────────────────────────────────────────── */
+.sidebar {
+    background-color: @bg_color_dark;
+    border-right: 1px solid @border_color;
+}
+
+.sidebar row:selected {
+    background-color: @selection_bg;
+    border-left: 2px solid @accent_gold;
+}
+
+/* ── Scrollbars ─────────────────────────────────────────────────────────────── */
+scrollbar {
+    background-color: transparent;
+}
+
+scrollbar slider {
+    background-color: @border_color;
+    border-radius: 0;
+    min-width: 5px;
+    min-height: 5px;
+    transition: background-color 120ms;
+}
+
+scrollbar slider:hover {
+    background-color: @accent_gold;
+}
+
+scrollbar.vertical slider { min-width: 5px; }
+scrollbar.horizontal slider { min-height: 5px; }
+
+/* ── Notebook (tabs) ─────────────────────────────────────────────────────────── */
+notebook > header {
+    background-color: @bg_color_dark;
+    border-bottom: 1px solid @border_color;
+    padding: 0;
+}
+
+notebook > header > tabs > tab {
+    padding: 6px 16px;
+    border-radius: 0;
+    color: @fg_color_muted;
+    border-right: 1px solid @border_color;
+    transition: color 100ms;
+}
+
+notebook > header > tabs > tab:checked {
+    color: @accent_gold_light;
+    background-color: @bg_color;
+    border-bottom: 2px solid @accent_gold;
+}
+
+notebook > header > tabs > tab:hover:not(:checked) {
+    color: @fg_color;
+    background-color: @bg_color_alt;
+}
+
+/* ── Menus ───────────────────────────────────────────────────────────────────── */
+menu,
+.menu,
+.popup {
+    background-color: @bg_color_dark;
+    color: @fg_color;
+    border: 1px solid @border_color;
+    border-radius: 0;
+    padding: 2px 0;
+}
+
+menuitem {
+    padding: 6px 18px;
+    border-radius: 0;
+    transition: background-color 60ms;
+}
+
+menuitem:hover {
+    background-color: @selection_bg;
+    color: @accent_gold_light;
+    border-left: 2px solid @accent_gold;
+}
+
+menuitem:disabled {
+    color: @fg_color_dim;
+}
+
+separator.menuitem,
+separator {
+    background-color: @border_color;
+    min-height: 1px;
+    margin: 3px 0;
+}
+
+/* ── Toolbar ─────────────────────────────────────────────────────────────────── */
+toolbar {
+    background-color: @bg_color_dark;
+    border-bottom: 1px solid @border_color;
+    padding: 2px;
+}
+
+toolbar button {
+    border: none;
+    background: transparent;
+    padding: 4px 8px;
+    border-radius: 0;
+}
+
+toolbar button:hover {
+    background-color: @selection_bg;
+    border-bottom: 2px solid @accent_gold;
+}
+
+/* ── Status bar ──────────────────────────────────────────────────────────────── */
+statusbar {
+    background-color: @bg_color_dark;
+    border-top: 1px solid @border_color;
+    font-size: 0.85em;
+    color: @fg_color_muted;
+    padding: 2px 8px;
+}
+
+/* ── Progress bar ────────────────────────────────────────────────────────────── */
+progressbar trough {
+    background-color: @bg_color_dark;
+    border: 1px solid @border_color;
+    border-radius: 0;
+}
+
+progressbar progress {
+    background-color: @accent_gold;
+    border-radius: 0;
+    min-height: 4px;
+}
+
+/* ── Scale/slider ────────────────────────────────────────────────────────────── */
+scale trough {
+    background-color: @bg_color_dark;
+    border: 1px solid @border_color;
+    border-radius: 0;
+    min-height: 3px;
+}
+
+scale highlight {
+    background-color: @accent_gold;
+    border-radius: 0;
+}
+
+scale slider {
+    background-color: @accent_gold_light;
+    border-radius: 0;
+    min-width: 12px;
+    min-height: 12px;
+}
+
+/* ── Checkboxes & radio buttons ──────────────────────────────────────────────── */
+checkbutton check,
+radiobutton radio {
+    background-color: @bg_color_dark;
+    border: 1px solid @fg_color_muted;
+    border-radius: 0;
+    min-width: 14px;
+    min-height: 14px;
+}
+
+checkbutton check:checked {
+    background-color: @accent_gold;
+    border-color: @accent_gold;
+    color: @bg_color_dark;
+}
+
+radiobutton radio:checked {
+    background-color: @accent_teal;
+    border-color: @accent_teal_light;
+}
+
+/* ── Frame / Groupbox ────────────────────────────────────────────────────────── */
+frame > border,
+.frame {
+    border: 1px solid @border_color;
+    border-radius: 0;
+    padding: 8px;
+}
+
+/* ── Tooltip ─────────────────────────────────────────────────────────────────── */
+tooltip {
+    background-color: @bg_color_dark;
+    color: @fg_color;
+    border: 1px solid @accent_gold;
+    border-radius: 0;
+    padding: 4px 8px;
+    font-size: 0.85em;
+}
+
+/* ── Popover ─────────────────────────────────────────────────────────────────── */
+popover > contents {
+    background-color: @bg_color_dark;
+    border: 1px solid @border_color;
+    border-radius: 0;
+    padding: 8px;
+}
+
+/* ── InfoBar ─────────────────────────────────────────────────────────────────── */
+infobar {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid @border_color;
+}
+
+infobar.info    { background-color: #0D2A3A; border-left: 3px solid @accent_teal; }
+infobar.warning { background-color: #2A1E00; border-left: 3px solid @warning_color; }
+infobar.error   { background-color: #2A0A0A; border-left: 3px solid @error_color; }
+infobar.success { background-color: #0A2A14; border-left: 3px solid @success_color; }
+
+/* ── Nautilus / Thunar file manager ─────────────────────────────────────────── */
+.nautilus-window .sidebar,
+.thunar .sidebar {
+    background-color: @bg_color_dark;
+}
+
+.nautilus-window .path-bar-box button,
+.thunar .toolbar button {
+    border-radius: 0;
+}
+
+/* ── Terminal ────────────────────────────────────────────────────────────────── */
+vte-terminal {
+    background-color: #080C14;
+    color: #C8D4E8;
+    padding: 8px;
+}
