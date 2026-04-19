@@ -1,1 +1,103 @@
+# =============================================================================
+# Diyar OS — GRUB2 Theme
+# grub-theme/theme.txt
+#
+# Install to: /boot/grub/themes/diyar/
+# Reference in /etc/default/grub:
+#   GRUB_THEME="/boot/grub/themes/diyar/theme.txt"
+# =============================================================================
 
+# --- Global ---
+title-text: ""
+desktop-color: "#0A0D14"
+desktop-image: "background.png"
+
+# --- Terminal box (text output area) ---
+terminal-box: "terminal_box_*.png"
+terminal-font: "Unifont Regular 14"
+terminal-left: "20%"
+terminal-top: "12%"
+terminal-width: "60%"
+terminal-height: "76%"
+terminal-border: "1"
+
+# --- Boot menu ---
++ boot_menu {
+    left   = 30%
+    top    = 28%
+    width  = 40%
+    height = 44%
+
+    item_font       = "Unifont Regular 14"
+    item_color      = "#8FA8C8"
+    selected_item_color = "#E8C170"
+
+    item_height     = 36
+    item_padding    = 10
+    item_spacing    = 2
+
+    selected_item_pixmap_style = "select_*.png"
+    icon_width  = 24
+    icon_height = 24
+    item_icon_space = 8
+
+    scrollbar = false
+}
+
+# --- Title label: "ديار" (rendered via unicode in GRUB font) ---
++ label {
+    left  = 50%-120
+    top   = 14%
+    width = 240
+    align = "center"
+    text  = "Diyar OS"
+    font  = "Unifont Regular 22"
+    color = "#C9963A"
+}
+
+# --- Subtitle ---
++ label {
+    left  = 50%-120
+    top   = 21%
+    width = 240
+    align = "center"
+    text  = "ديار نظام التشغيل"
+    font  = "Unifont Regular 14"
+    color = "#4A6080"
+}
+
+# --- Horizontal gold rule below title ---
++ image {
+    left   = 25%
+    top    = 26%
+    width  = 50%
+    height = 1
+    file   = "hrule.png"
+}
+
+# --- Progress bar area ---
++ progress_bar {
+    id    = "__timeout__"
+    left  = 30%
+    top   = 74%
+    width = 40%
+    height = 3
+
+    font            = "Unifont Regular 12"
+    text_color      = "#4A6080"
+    fg_color        = "#C9963A"
+    bg_color        = "#1A2840"
+    border_color    = "#2A3850"
+    text = "@TIMEOUT_NOTIFICATION_LONG@"
+}
+
+# --- Bottom hint ---
++ label {
+    left  = 50%-200
+    top   = 80%
+    width = 400
+    align = "center"
+    text  = "↑↓ Navigate    Enter Select    e Edit    c Console"
+    font  = "Unifont Regular 11"
+    color = "#2A3850"
+}
