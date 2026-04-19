@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Diyar OS Logo
+  Concept: The letterform د (Dal) — the first letter of ديار —
+  deconstructed into a sharp geometric mark. Clean, modern, unmistakably Arabic.
+  Works at any size from 16px favicon to full-page.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="logo-gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#E8C170"/>
+      <stop offset="100%" stop-color="#C9963A"/>
+    </linearGradient>
+    <linearGradient id="logo-teal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#24A0B5"/>
+      <stop offset="100%" stop-color="#1A6B7C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background disc — deep navy -->
+  <circle cx="50" cy="50" r="48" fill="#0D1525"/>
+  <!-- Outer ring — gold hairline -->
+  <circle cx="50" cy="50" r="47" fill="none" stroke="#C9963A" stroke-width="0.8" opacity="0.7"/>
+
+  <!-- ── The Mark: stylised د (Dal) ──
+       A bold arc opening right + a sharp descender tick,
+       rendered in angular geometric strokes -->
+
+  <!-- Main arc — thick gold sweep, top-left to bottom-right, open right -->
+  <path d="M 26 28
+           C 18 28, 14 36, 14 50
+           C 14 68, 24 76, 42 76
+           L 72 76"
+        fill="none"
+        stroke="url(#logo-gold)"
+        stroke-width="7"
+        stroke-linecap="square"
+        stroke-linejoin="miter"/>
+
+  <!-- Horizontal cap — top of the dal -->
+  <line x1="26" y1="28" x2="70" y2="28"
+        stroke="url(#logo-gold)" stroke-width="7" stroke-linecap="square"/>
+
+  <!-- Teal accent tick — the characteristic dot position of Dal, elevated to a geometric slash -->
+  <line x1="58" y1="84" x2="72" y2="64"
+        stroke="url(#logo-teal)" stroke-width="4" stroke-linecap="square"/>
+
+  <!-- Inner corner accent — small square at the top-right junction -->
+  <rect x="63" y="23" width="8" height="8" fill="#E8C170" opacity="0.9"/>
+
+  <!-- Bottom-right terminus square -->
+  <rect x="68" y="72" width="8" height="8" fill="#24A0B5" opacity="0.9"/>
+
+</svg>
