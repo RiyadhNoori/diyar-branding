@@ -1,1 +1,16 @@
+# =============================================================================
+# Diyar OS — Plymouth Boot Splash Theme
+# plymouth/diyar-theme/diyar.plymouth
+#
+# Install to: /usr/share/plymouth/themes/diyar/
+# Activate:   sudo plymouth-set-default-theme -R diyar
+# =============================================================================
 
+[Plymouth Theme]
+Name=Diyar OS
+Description=Diyar OS boot splash — geometric Arabic art with animated core
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/diyar
+ScriptFile=/usr/share/plymouth/themes/diyar/diyar.script
