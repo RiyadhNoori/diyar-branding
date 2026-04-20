@@ -1,1 +1,14 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Diyar
+Name[ar]=ديار
+Comment=Diyar OS GTK Theme — sharp, dark, gold accent
+Comment[ar]=ثيم ديار — حاد، داكن، ذهبي
+Encoding=UTF-8
 
+[X-GNOME-Metatheme]
+GtkTheme=Diyar
+MetacityTheme=Diyar
+IconTheme=Diyar
+CursorTheme=Adwaita
+ButtonLayout=close,minimize,maximize:
